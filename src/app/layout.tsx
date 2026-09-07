@@ -3,7 +3,7 @@ import { DM_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { SiteFooter } from "./_components/site-footer";
 import { SiteHeader } from "./_components/site-header";
-import { site } from "./_data/site";
+import { site, siteUrl } from "./_data/site";
 
 const dmSans = DM_Sans({
   variable: "--font-body",
@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "SJ Sree's Tours & Travels | Kodaikanal Tours, Taxi & Rooms",
     template: "%s | SJ Sree's Tours & Travels",

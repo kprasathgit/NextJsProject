@@ -9,6 +9,8 @@ export const site = {
   whatsappUrl: "https://wa.me/916380589263",
 };
 
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+
 export const sightseeingPlaces = [
   "Coaker's Walk", "Bryant Park", "Kodaikanal Lake", "Pillar Rocks", "Guna Caves", "Moir Point", "Pine Forest", "Silver Cascade Falls", "Berijam Lake", "Dolphin's Nose",
 ];

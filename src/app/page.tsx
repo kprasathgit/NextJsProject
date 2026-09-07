@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BookingActions } from "./_components/booking-actions";
-import { site, serviceCards } from "./_data/site";
+import { site, serviceCards, siteUrl } from "./_data/site";
 
 const reasons = ["Local Kodaikanal knowledge", "Comfortable vehicles and stays", "Flexible plans for families and groups"];
 
@@ -12,7 +12,7 @@ const agencySchema = {
   description: "Kodaikanal tours, taxis, sightseeing, Tempo Traveller and room booking.",
   telephone: `+91-${site.phone}`,
   address: { "@type": "PostalAddress", streetAddress: site.address, addressLocality: "Kodaikanal", addressRegion: "Tamil Nadu", addressCountry: "IN" },
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+  url: siteUrl,
 };
 
 export default function Home() {
