@@ -32,7 +32,7 @@ export const galleryImages = [
 
 export const serviceCards = [
   { title: "Kodaikanal sightseeing", text: "Comfortable local trips planned around your time and interests.", href: "/kodaikanal-sightseeing", image: "/images/foggy-view.jpeg" },
-  { title: "Cab & taxi booking", text: "Reliable cars and local drivers for transfers and full-day travel.", href: "/cab-booking", image: "/images/property-exterior.jpeg" },
+  { title: "Cab & taxi booking", text: "Reliable cars and local drivers for transfers and full-day travel.", href: "/cab-taxi-booking", image: "/images/property-exterior.jpeg" },
   { title: "Tempo Traveller", text: "Group travel made easy with spacious vehicles and flexible routes.", href: "/tempo-traveller-booking", image: "/images/garden-view.jpeg" },
   { title: "Rooms & stays", text: "A peaceful, well-kept stay for families and groups visiting Kodai.", href: "/room-hotel-booking", image: "/images/room-1.jpeg" },
 ];

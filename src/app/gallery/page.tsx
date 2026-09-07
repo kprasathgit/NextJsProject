@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Image from "next/image";
+import { ImageLightbox } from "../_components/image-lightbox";
 import { galleryImages } from "../_data/site";
 import { PageIntro } from "../_components/page-intro";
 
@@ -30,12 +30,11 @@ export default function GalleryPage() {
 						key={src}
 						className={`full-gallery-item full-gallery-item-${index + 1}`}
 					>
-						<Image
+						<ImageLightbox
 							src={src}
 							alt={alt}
-							fill
+							className="image-lightbox"
 							sizes="(max-width: 700px) 50vw, 25vw"
-							loading="lazy"
 						/>
 						<figcaption>{alt}</figcaption>
 					</figure>

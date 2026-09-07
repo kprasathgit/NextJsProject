@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { BookingActions } from "../_components/booking-actions";
+import { ImageLightbox } from "../_components/image-lightbox";
 import { PageIntro } from "../_components/page-intro";
 import { galleryImages } from "../_data/site";
 
@@ -45,12 +45,11 @@ export default function RoomPage() {
 			<section className="room-strip page-width">
 				{galleryImages.slice(0, 6).map(([src, alt]) => (
 					<div key={src}>
-						<Image
+						<ImageLightbox
 							src={src}
 							alt={alt}
-							fill
+							className="image-lightbox"
 							sizes="(max-width: 700px) 50vw, 16vw"
-							loading="lazy"
 						/>
 					</div>
 				))}
