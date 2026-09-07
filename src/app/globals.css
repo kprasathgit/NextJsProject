@@ -73,6 +73,7 @@ h2 { font-size: clamp(3rem, 6vw, 5.5rem); margin: 22px 0 0; }.section-heading > 
 
 @media (max-width: 760px) {
   .header-call span { display: none; }
+  .main-nav .header-call { display: inline-flex; }
   .header-call svg { width: 18px; height: 18px; }
   .floating-contact { right: 16px; bottom: 16px; }
   .floating-call, .floating-whatsapp { width: 43px; height: 43px; }
