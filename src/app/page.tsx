@@ -1,69 +1,38 @@
 import Image from "next/image";
+import Link from "next/link";
+import { BookingActions } from "./_components/booking-actions";
+import { site, serviceCards } from "./_data/site";
+
+const reasons = ["Local Kodaikanal knowledge", "Comfortable vehicles and stays", "Flexible plans for families and groups"];
+
+const agencySchema = {
+  "@context": "https://schema.org",
+  "@type": "TravelAgency",
+  name: site.name,
+  description: "Kodaikanal tours, taxis, sightseeing, Tempo Traveller and room booking.",
+  telephone: `+91-${site.phone}`,
+  address: { "@type": "PostalAddress", streetAddress: site.address, addressLocality: "Kodaikanal", addressRegion: "Tamil Nadu", addressCountry: "IN" },
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
+};
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+  return <main>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(agencySchema) }} />
+    <section className="home-hero">
+      <Image className="hero-image" src="/images/foggy-view.jpeg" alt="Misty green hills in Kodaikanal" fill priority sizes="100vw" />
+      <div className="hero-shade" />
+      <div className="page-width home-hero-copy"><p className="eyebrow">Your Kodaikanal journey, locally arranged</p><h1>Come for the hills.<br /><em>Stay for the feeling.</em></h1><p>Kodaikanal tours, comfortable cabs, group travel and peaceful stays from a team that knows the hills personally.</p><BookingActions label="Plan your Kodaikanal trip" /></div>
+      <div className="hero-stamp"><span>Since</span><strong>2014</strong><span>Kodaikanal · Tamil Nadu</span></div>
+    </section>
+
+    <section className="trust-strip"><div className="page-width trust-items"><span>Local travel partner</span><span>Kodaikanal sightseeing</span><span>Family &amp; group friendly</span><span>Direct WhatsApp booking</span></div></section>
+
+    <section className="content-section page-width home-intro"><div><p className="eyebrow accent">Welcome to Sree&apos;s</p><h2>Good trips begin<br /><em>with local people.</em></h2></div><div><p className="large-copy">From a one-day sightseeing ride to a weekend stay in the misty hills, we take care of the details that make Kodaikanal feel easy.</p><Link className="text-link" href="/about">Meet your local travel team <span aria-hidden="true">→</span></Link></div></section>
+
+    <section className="service-band"><div className="page-width"><div className="section-topline"><div><p className="eyebrow">Travel your way</p><h2>One team for<br /><em>the whole trip.</em></h2></div><Link className="text-link light-link" href="/services">See all services</Link></div><div className="service-cards">{serviceCards.map((service, index) => <Link className="service-card" href={service.href} key={service.title}><Image src={service.image} alt={service.title} fill sizes="(max-width: 700px) 100vw, 25vw" loading="lazy" /><span className="card-shade" /><div className="service-card-content"><span>0{index + 1}</span><h3>{service.title}</h3><p>{service.text}</p></div></Link>)}</div></div></section>
+
+    <section className="content-section page-width reason-section"><div><p className="eyebrow accent">The Sree&apos;s difference</p><h2>Less searching.<br /><em>More arriving.</em></h2><BookingActions label="Talk to us" /></div><div className="reason-list">{reasons.map((reason, index) => <div key={reason}><span>0{index + 1}</span><p>{reason}</p></div>)}</div></section>
+
+    <section className="home-cta"><div className="page-width"><p className="eyebrow">Ready when you are</p><h2>Let&apos;s make your<br /><em>Kodai plan.</em></h2><Link className="button button-light" href="/whatsapp-booking">Open WhatsApp booking</Link></div></section>
+  </main>;
 }
