@@ -1,30 +1,13 @@
 import type { Metadata } from "next";
 import { BookingActions } from "../_components/booking-actions";
 import { PageIntro } from "../_components/page-intro";
+import { tourPackages } from "../_data/site";
 
 export const metadata: Metadata = {
 	title: "Kodaikanal Tour Packages",
 	description:
 		"Plan a Kodaikanal tour package with local sightseeing, cabs and stays from SJ Sree's Tours & Travels.",
 };
-
-const packages = [
-	{
-		name: "Kodai essentials",
-		days: "1 day",
-		places: "Lake · Coaker's Walk · Bryant Park · Pillar Rocks",
-	},
-	{
-		name: "Weekend in the hills",
-		days: "2 days / 1 night",
-		places: "Sightseeing · Local food · Comfortable room stay",
-	},
-	{
-		name: "Slow Kodai escape",
-		days: "3 days / 2 nights",
-		places: "Full sightseeing · Flexible travel · Stay arrangement",
-	},
-];
 
 export default function PackagesPage() {
 	return (
@@ -43,13 +26,15 @@ export default function PackagesPage() {
 			/>
 			<section className="content-section page-width">
 				<div className="package-grid">
-					{packages.map((item, index) => (
+					{tourPackages.map((item, index) => (
 						<article className="package-card" key={item.name}>
 							<span className="service-index">0{index + 1}</span>
-							<p className="eyebrow accent">{item.days}</p>
+							<p className="eyebrow accent">{item.subtitle}</p>
 							<h2>{item.name}</h2>
-							<p>{item.places}</p>
-							<BookingActions label="Ask for price" />
+							<ul className="package-places">
+								{item.places.map((place) => <li key={place}>{place}</li>)}
+							</ul>
+							<BookingActions label="Ask about this tour" />
 						</article>
 					))}
 				</div>

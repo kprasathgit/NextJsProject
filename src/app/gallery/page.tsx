@@ -35,6 +35,8 @@ export default function GalleryPage() {
 							alt={alt}
 							className="image-lightbox"
 							sizes="(max-width: 700px) 50vw, 25vw"
+							gallery={galleryImages}
+							initialIndex={index}
 						/>
 						<figcaption>{alt}</figcaption>
 					</figure>

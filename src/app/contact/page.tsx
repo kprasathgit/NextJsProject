@@ -44,12 +44,24 @@ export default function ContactPage() {
 							<a href={site.whatsappUrl}>{site.whatsapp}</a>
 						</p>
 						<p>
+							<strong>Email</strong>
+							<a href={`mailto:${site.email}`}>{site.email}</a>
+						</p>
+						<p>
 							<strong>Address</strong>
 							<span>{site.address}</span>
 						</p>
 						<p>
 							<strong>Instagram</strong>
 							<a href={site.instagram}>@sj_tours_kodai</a>
+						</p>
+						<p>
+							<strong>Hours</strong>
+							<span>{site.openingHours}</span>
+						</p>
+						<p>
+							<strong>Google</strong>
+							<span>{site.googleBusinessProfile ? <a href={site.googleBusinessProfile}>Business Profile</a> : "Profile link coming soon"}</span>
 						</p>
 					</div>
 				</div>

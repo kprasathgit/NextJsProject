@@ -3,11 +3,62 @@ export const site = {
   shortName: "Sree's Tours",
   location: "Kodaikanal, Tamil Nadu",
   phone: "8098871854",
+  email: "sjsrees7@gmail.com",
   whatsapp: "6380589263",
   address: "Annanagar 1st Street, Kodaikanal, Tamil Nadu",
   instagram: "https://www.instagram.com/sj_tours_kodai?stkn=dzNiZjhwcWM3ZHRm",
   whatsappUrl: "https://wa.me/916380589263",
+  openingHours: "Available 24 hours",
+  googleBusinessProfile: "",
 };
+
+export const vehicleTypes = [
+  { name: "Etios", seats: "4 seats", image: "/images/v1.jpeg" },
+  { name: "Innova", seats: "7 seats", image: "/images/v1.jpeg" },
+  { name: "Tempo Traveller", seats: "14 seats", image: "/images/v1.jpeg" },
+  { name: "Mini Bus", seats: "24 seats", image: "/images/v1.jpeg" },
+  { name: "Bus", seats: "40 seats", image: "/images/v1.jpeg" },
+];
+
+export const tourPackages = [
+  {
+    name: "Valley Tour",
+    subtitle: "Classic Kodaikanal sightseeing",
+    places: [
+      "Coaker's Walk", "Pine Forest", "Moier Point", "Guna Cave", "Pillar Rocks",
+      "Golf Course", "Green Valley View", "Upper Lake", "Shopping Place", "Kodai Lake (or) City Drop",
+    ],
+  },
+  {
+    name: "Picnic Tour - 1",
+    subtitle: "Trekking Tour",
+    places: [
+      "La Saleth Church", "500 Years Old Tree", "Vattakanal Falls", "Pambar Falls", "Lion Cave",
+      "Dolphin Nose", "Mountain Beauty", "Echo Point", "Kodai Lake (or) City Drop",
+    ],
+  },
+  {
+    name: "Picnic Tour - 2",
+    subtitle: "Wild Ways",
+    places: [
+      "Silent Valley View", "Fire Tower", "Berijam Lake View", "Caps Fly Valley",
+      "Mathikettan Forest View", "Kodai Lake (or) City Drop",
+    ],
+  },
+  {
+    name: "Picnic Tour - 3",
+    subtitle: "Village Tour",
+    places: [
+      "Observatory Pine Forest", "Gundar Falls", "Palani View", "Mahalakshmi Temple",
+      "Poombarai Village View", "Kulantahaivelapper Temple", "Mannavanur Lake View", "Kodai Lake (or) City Drop",
+    ],
+  },
+];
+
+export const roomTypes = [
+  "Single Room", "Double Room", "Triple Room", "Family Room",
+  "Deluxe Room", "Suite Room", "Cottage", "View Room",
+];
 
 export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
 
@@ -15,7 +66,7 @@ export const sightseeingPlaces = [
   "Coaker's Walk", "Bryant Park", "Kodaikanal Lake", "Pillar Rocks", "Guna Caves", "Moir Point", "Pine Forest", "Silver Cascade Falls", "Berijam Lake", "Dolphin's Nose",
 ];
 
-export const galleryImages = [
+export const galleryImages: [string, string][] = [
   ["/images/room-1.jpeg", "Comfortable guest room"],
   ["/images/room-2.jpeg", "Guest bedroom"],
   ["/images/room-3.jpeg", "Spacious room"],

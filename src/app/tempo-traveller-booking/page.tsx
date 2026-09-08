@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { BookingActions } from "../_components/booking-actions";
 import { PageIntro } from "../_components/page-intro";
+import Image from "next/image";
+import { vehicleTypes, site } from "../_data/site";
 
 export const metadata: Metadata = {
 	title: "Kodaikanal Tempo Traveller Booking",
@@ -42,6 +44,15 @@ export default function TempoPage() {
 						and a tailored quote.
 					</p>
 					<BookingActions label="Check availability" />
+				</div>
+			</section>
+			<section className="content-section vehicle-section">
+				<div className="page-width">
+					<p className="eyebrow accent">Group vehicles</p>
+					<h2>Travel <em>together.</em></h2>
+					<div className="vehicle-grid">
+												{vehicleTypes.slice(2).map((vehicle) => <article className="vehicle-card" key={vehicle.name}><Image src={vehicle.image} alt={`${vehicle.name} vehicle`} width={480} height={320} /><h3>{vehicle.name}</h3><p>{vehicle.seats} · {site.openingHours}</p></article>)}
+					</div>
 				</div>
 			</section>
 		</main>
