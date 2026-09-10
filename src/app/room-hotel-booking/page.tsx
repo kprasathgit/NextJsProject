@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 	title: "Kodaikanal Room and Hotel Booking",
 	description:
 		"Explore comfortable rooms and peaceful stays in Kodaikanal with SJ Sree's Tours & Travels.",
+	alternates: { canonical: "/room-hotel-booking" },
 };
 
 const roomGallery = galleryImages.slice(0, 6);

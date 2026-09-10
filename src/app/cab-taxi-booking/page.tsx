@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 	title: "Kodaikanal Cab and Taxi Booking",
 	description:
 		"Book a Kodaikanal cab or taxi for local sightseeing, station transfers and outstation travel.",
+	alternates: { canonical: "/cab-taxi-booking" },
 };
 
 export default function CabPage() {

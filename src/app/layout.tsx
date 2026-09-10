@@ -23,23 +23,82 @@ export const metadata: Metadata = {
   },
   description: "Book Kodaikanal tours, sightseeing taxis, Tempo Travellers and comfortable rooms with SJ Sree's Tours & Travels.",
   keywords: ["Kodaikanal tours", "Kodaikanal taxi", "Kodaikanal tour packages", "Kodaikanal rooms", "Tempo Traveller Kodaikanal"],
+  alternates: { canonical: "/" },
+  category: "travel",
+  creator: site.name,
+  publisher: site.name,
   openGraph: {
     title: "SJ Sree's Tours & Travels | Explore Kodaikanal",
     description: "Local Kodaikanal sightseeing, cabs, group travel and peaceful rooms arranged by one trusted team.",
     type: "website",
     siteName: "SJ Sree's Tours & Travels",
+    locale: "en_IN",
+    images: [{ url: "/images/logo.png", width: 512, height: 512, alt: "SJ Sree's Tours & Travels logo" }],
+  },
+  twitter: {
+    card: "summary",
+    title: "SJ Sree's Tours & Travels | Explore Kodaikanal",
+    description: "Local Kodaikanal sightseeing, cabs, group travel and peaceful rooms arranged by one trusted team.",
+    images: ["/images/logo.png"],
   },
   robots: { index: true, follow: true },
   icons: { icon: "/images/logo.png", apple: "/images/logo.png" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TravelAgency",
+        "@id": `${siteUrl}/#business`,
+        name: site.name,
+        url: siteUrl,
+        logo: `${siteUrl}/images/logo.png`,
+        image: `${siteUrl}/images/property-exterior.jpeg`,
+        description: "Kodaikanal tours, local sightseeing, cab and taxi booking, group travel and room booking.",
+        telephone: `+91-${site.phone}`,
+        email: site.email,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: site.address,
+          addressLocality: "Kodaikanal",
+          addressRegion: "Tamil Nadu",
+          addressCountry: "IN",
+        },
+        areaServed: ["Kodaikanal", "Tamil Nadu"],
+        openingHoursSpecification: {
+          "@type": "OpeningHoursSpecification",
+          dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          opens: "00:00",
+          closes: "23:59",
+        },
+        sameAs: [site.instagram],
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: `+91-${site.phone}`,
+          contactType: "customer service",
+          availableLanguage: ["English", "Tamil"],
+        },
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: site.name,
+        publisher: { "@id": `${siteUrl}/#business` },
+        inLanguage: "en-IN",
+      },
+    ],
+  };
+
   return (
     <html
       lang="en"
       className={`${dmSans.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
         <SiteHeader />
         {children}
         <div className="floating-contact" aria-label="Contact SJ Sree's Tours and Travels">

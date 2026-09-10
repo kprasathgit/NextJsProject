@@ -5,6 +5,7 @@ import { PageIntro } from "../_components/page-intro";
 export const metadata: Metadata = {
   title: "About Us",
   description: "Meet SJ Sree's Tours & Travels, your local Kodaikanal travel partner.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

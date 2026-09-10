@@ -7,6 +7,7 @@ export const metadata: Metadata = {
 	title: "Kodaikanal Tour Packages",
 	description:
 		"Plan a Kodaikanal tour package with local sightseeing, cabs and stays from SJ Sree's Tours & Travels.",
+	alternates: { canonical: "/tour-packages" },
 };
 
 export default function PackagesPage() {

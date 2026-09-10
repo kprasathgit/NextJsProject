@@ -6,6 +6,7 @@ export const metadata: Metadata = {
 	title: "WhatsApp Booking",
 	description:
 		"Book Kodaikanal tours, taxis, Tempo Travellers and rooms through WhatsApp.",
+	alternates: { canonical: "/whatsapp-booking" },
 };
 
 export default function WhatsAppPage() {

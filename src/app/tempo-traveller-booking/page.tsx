@@ -8,6 +8,7 @@ export const metadata: Metadata = {
 	title: "Kodaikanal Tempo Traveller Booking",
 	description:
 		"Book a Tempo Traveller in Kodaikanal for family trips, group tours and sightseeing.",
+	alternates: { canonical: "/tempo-traveller-booking" },
 };
 
 export default function TempoPage() {

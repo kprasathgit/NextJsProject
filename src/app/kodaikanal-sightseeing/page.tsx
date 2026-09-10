@@ -7,6 +7,7 @@ export const metadata: Metadata = {
 	title: "Kodaikanal Sightseeing",
 	description:
 		"Book a local Kodaikanal sightseeing taxi and explore the most beautiful places in the hills.",
+	alternates: { canonical: "/kodaikanal-sightseeing" },
 };
 
 export default function SightseeingPage() {

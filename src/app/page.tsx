@@ -1,33 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BookingActions } from "./_components/booking-actions";
-import { site, serviceCards, siteUrl } from "./_data/site";
+import { serviceCards, tourPackages } from "./_data/site";
 
 const reasons = ["Local Kodaikanal knowledge", "Comfortable vehicles and stays", "Flexible plans for families and groups"];
-
-const agencySchema = {
-  "@context": "https://schema.org",
-  "@type": "TravelAgency",
-  name: site.name,
-  description: "Kodaikanal tours, taxis, sightseeing, Tempo Traveller and room booking.",
-  telephone: `+91-${site.phone}`,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: site.address,
-    addressLocality: "Kodaikanal",
-    addressRegion: "Tamil Nadu",
-    addressCountry: "IN",
-  },
-  url: siteUrl,
-};
 
 export default function Home() {
   return (
     <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(agencySchema) }}
-      />
       <section className="home-hero">
         <Image
           className="hero-image"
@@ -124,6 +104,39 @@ export default function Home() {
                 </div>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="content-section package-preview-section">
+        <div className="page-width">
+          <div className="section-topline">
+            <div>
+              <p className="eyebrow accent">Choose your route</p>
+              <h2>
+                Four easy ways
+                <br />
+                <em>to see Kodai.</em>
+              </h2>
+            </div>
+          </div>
+          <div className="package-grid">
+            {tourPackages.filter((item) => item.featured).map((item, index) => (
+              <article className="package-card" key={item.name}>
+                <span className="service-index">0{index + 1}</span>
+                <p className="eyebrow accent">{item.subtitle}</p>
+                <h2>{item.name}</h2>
+                <ul className="package-places">
+                  {item.places.map((place) => <li key={place}>{place}</li>)}
+                </ul>
+                <BookingActions label="Ask about this tour" />
+              </article>
+            ))}
+          </div>
+          <div className="package-all-link">
+            <Link className="button button-dark" href="/tour-packages">
+              View all tour packages <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
       </section>

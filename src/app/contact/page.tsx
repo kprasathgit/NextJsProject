@@ -7,6 +7,7 @@ export const metadata: Metadata = {
 	title: "Contact SJ Sree's Tours & Travels",
 	description:
 		"Contact SJ Sree's Tours & Travels for Kodaikanal tours, taxis, rooms and travel bookings.",
+	alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {

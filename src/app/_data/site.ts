@@ -23,6 +23,7 @@ export const vehicleTypes = [
 export const tourPackages = [
   {
     name: "Valley Tour",
+    featured: true,
     subtitle: "Classic Kodaikanal sightseeing",
     places: [
       "Coaker's Walk", "Pine Forest", "Moier Point", "Guna Cave", "Pillar Rocks",
@@ -31,6 +32,7 @@ export const tourPackages = [
   },
   {
     name: "Picnic Tour - 1",
+    featured: true,
     subtitle: "Trekking Tour",
     places: [
       "La Saleth Church", "500 Years Old Tree", "Vattakanal Falls", "Pambar Falls", "Lion Cave",
@@ -39,6 +41,7 @@ export const tourPackages = [
   },
   {
     name: "Picnic Tour - 2",
+    featured: true,
     subtitle: "Wild Ways",
     places: [
       "Silent Valley View", "Fire Tower", "Berijam Lake View", "Caps Fly Valley",
@@ -47,6 +50,7 @@ export const tourPackages = [
   },
   {
     name: "Picnic Tour - 3",
+    featured: true,
     subtitle: "Village Tour",
     places: [
       "Observatory Pine Forest", "Gundar Falls", "Palani View", "Mahalakshmi Temple",

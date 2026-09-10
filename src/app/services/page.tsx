@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Travel Services in Kodaikanal",
   description:
     "Kodaikanal sightseeing, taxi, Tempo Traveller and room booking services from SJ Sree's Tours & Travels.",
+  alternates: { canonical: "/services" },
 };
 
 export default function ServicesPage() {

@@ -7,6 +7,7 @@ export const metadata: Metadata = {
 	title: "Kodaikanal Travel and Property Gallery",
 	description:
 		"See rooms, common spaces, surroundings and Kodaikanal views from SJ Sree's Tours & Travels.",
+	alternates: { canonical: "/gallery" },
 };
 
 export default function GalleryPage() {
